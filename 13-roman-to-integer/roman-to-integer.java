@@ -3,10 +3,12 @@ class Solution {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        int ans = romanToInt(s);
+        Solution sol = new Solution();
+        
+        int ans = sol.romanToInt(s);
         System.out.print(s+" = "+ans);
     }
-    public static int romanToInt(String s) {
+    public int romanToInt(String s) {
         int temp = 0;
         for(int i = 0 ; i < s.length(); i++){
             int repetation = i;
