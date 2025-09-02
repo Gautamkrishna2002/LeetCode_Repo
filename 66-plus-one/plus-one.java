@@ -1,20 +1,17 @@
-import java.math.BigInteger;
+
 class Solution {
     public static int[] plusOne(int[] digits) {
-        StringBuilder sb = new StringBuilder();
-        for (int digit : digits) {
-            sb.append(digit);
+        int n = digits.length;
+
+        for (int i = n - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0; 
         }
-
-        BigInteger number = new BigInteger(sb.toString());
-        number = number.add(BigInteger.ONE);
-
-        String resultStr = number.toString();
-        int[] result = new int[resultStr.length()];
-        for (int i = 0; i < resultStr.length(); i++) {
-            result[i] = Character.getNumericValue(resultStr.charAt(i));
-        }
-
+        int[] result = new int[n + 1];
+        result[0] = 1; 
         return result;
     
      }
